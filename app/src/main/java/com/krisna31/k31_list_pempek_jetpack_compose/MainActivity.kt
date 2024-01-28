@@ -3,6 +3,7 @@ package com.krisna31.k31_list_pempek_jetpack_compose
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.BottomAppBar
@@ -16,6 +17,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
@@ -110,8 +112,14 @@ fun DetailScreen() {
 }
 
 @Composable
-fun AboutPages() {
-    Text(text = "About Bois")
+fun AboutPages(modifier: Modifier = Modifier) {
+    Box(
+        modifier = modifier.fillMaxSize(),
+        contentAlignment = Alignment.Center,
+    ) {
+        Text("Jelvin Krisna Putra")
+        Text("krisnaaaputraaa@gmail.com")
+    }
 }
 
 //private fun shareOrder(context: Context, summary: String) {
