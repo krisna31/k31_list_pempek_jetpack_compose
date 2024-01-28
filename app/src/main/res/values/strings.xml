@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">K31-List-Pempek-Jetpack-Compose</string>
+    <string name="title_activity_about_pages">AboutPages</string>
 </resources>
