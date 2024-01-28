@@ -19,10 +19,12 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import com.krisna31.k31_list_pempek_jetpack_compose.data.pempekList
 import com.krisna31.k31_list_pempek_jetpack_compose.pages.HomePages
 import com.krisna31.k31_list_pempek_jetpack_compose.ui.navbar.Screen
@@ -73,15 +75,15 @@ fun App(modifier: Modifier = Modifier, navController: NavHostController = rememb
                     pempekList = pempekList,
                 )
             }
-//            composable(Screen.Profile.route) {
-//                ProfileScreen()
-//            }
-//            composable(
-//                route = Screen.DetailReward.route,
-//                arguments = listOf(navArgument("rewardId") { type = NavType.LongType }),
-//            ) {
-//                val id = it.arguments?.getLong("rewardId") ?: -1L
-//                DetailScreen(
+            composable(Screen.About.route) {
+                AboutPages()
+            }
+            composable(
+                route = Screen.DetailPempek.route,
+                arguments = listOf(navArgument("pempekId") { type = NavType.IntType }),
+            ) {
+                val id = it.arguments?.getLong("rewardId") ?: -1L
+                DetailScreen(
 //                    rewardId = id,
 //                    navigateBack = {
 //                        navController.navigateUp()
@@ -96,10 +98,20 @@ fun App(modifier: Modifier = Modifier, navController: NavHostController = rememb
 //                            restoreState = true
 //                        }
 //                    }
-//                )
-//            }
+                )
+            }
         }
     }
+}
+
+@Composable
+fun DetailScreen() {
+    Text(text = "Detail Screen")
+}
+
+@Composable
+fun AboutPages() {
+    Text(text = "About Bois")
 }
 
 //private fun shareOrder(context: Context, summary: String) {
