@@ -3,8 +3,11 @@ package com.krisna31.k31_list_pempek_jetpack_compose.ui.navbar
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.filled.Home
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.stringResource
 import com.krisna31.k31_list_pempek_jetpack_compose.R
+import androidx.compose.ui.res.stringResource
 
 data class NavbarList(
     val nama: String,

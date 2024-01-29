@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">K31-List-Pempek-Jetpack-Compose</string>
     <string name="title_activity_about_pages">AboutPages</string>
+    <string name="home">Home</string>
+    <string name="profile_picture">Profile Picture</string>
+    <string name="jelvin_krisna_putra">Jelvin Krisna Putra</string>
+    <string name="krisnaaaputraaa_gmail_com">krisnaaaputraaa@gmail.com</string>
+    <string name="pempek_tidak_ditemukan">Pempek tidak ditemukan</string>
 </resources>

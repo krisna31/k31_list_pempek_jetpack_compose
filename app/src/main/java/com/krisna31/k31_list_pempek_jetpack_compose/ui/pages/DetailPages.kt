@@ -1,14 +1,12 @@
-package com.krisna31.k31_list_pempek_jetpack_compose.pages
+package com.krisna31.k31_list_pempek_jetpack_compose.ui.pages
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentSize
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
-import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -16,7 +14,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
-import androidx.compose.material3.TopAppBarColors
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -25,9 +22,9 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.layout.VerticalAlignmentLine
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
@@ -80,7 +77,7 @@ fun DetailPempekPages(
 //        },
     ) { innerPadding ->
         Column(
-            modifier = Modifier
+            modifier = modifier
                 .padding(innerPadding),
             verticalArrangement = Arrangement.spacedBy(8.dp),
             horizontalAlignment = Alignment.Start,
@@ -100,11 +97,16 @@ fun DetailPempekPages(
                             .build(),
                         placeholder = painterResource(R.drawable.placeholder),
                         error = painterResource(R.drawable.placeholder),
-                        contentDescription = "Pempek ${pempek.nama}",
+                        contentDescription = buildString {
+                            append("Pempek ")
+                            append(pempek.nama)
+                        },
                         contentScale = ContentScale.Crop,
-                        modifier = Modifier.clip(
-                            RectangleShape,
-                        ).align(Alignment.CenterHorizontally)
+                        modifier = Modifier
+                            .clip(
+                                RectangleShape,
+                            )
+                            .align(Alignment.CenterHorizontally)
                     )
                     Text(
                         text = pempek.nama,
@@ -113,7 +115,7 @@ fun DetailPempekPages(
                     )
                     Text(
                         text = pempek.deskripsi,
-                        maxLines = 2,
+                        maxLines = 10,
                         overflow = TextOverflow.Ellipsis,
                         style = MaterialTheme.typography.titleMedium,
                     )
@@ -135,7 +137,7 @@ fun DetailPempekPages(
                 }
             } else {
                 Text(
-                    text = "Pempek tidak ditemukan",
+                    text = stringResource(R.string.pempek_tidak_ditemukan),
                     modifier = Modifier
                         .padding(start = 2.dp),
                 )

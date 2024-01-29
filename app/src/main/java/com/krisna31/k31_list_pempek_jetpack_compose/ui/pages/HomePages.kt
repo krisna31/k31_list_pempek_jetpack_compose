@@ -1,6 +1,5 @@
-package com.krisna31.k31_list_pempek_jetpack_compose.pages
+package com.krisna31.k31_list_pempek_jetpack_compose.ui.pages
 
-import android.R.attr.maxLines
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -33,7 +32,7 @@ fun HomePages(
             .fillMaxSize()
             .wrapContentSize(Alignment.Center)
     ) {
-        itemsIndexed(pempekList, key = { index, item -> item.id }) { index, item ->
+        itemsIndexed(pempekList, key = { _, item -> item.id }) { index, item ->
             Row(
                 modifier = modifier
                     .wrapContentSize(Alignment.Center)
